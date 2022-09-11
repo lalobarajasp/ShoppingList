@@ -55,9 +55,10 @@
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
             <h6 class="my-0">Total en Productos</h6>
-            <small class="text-muted">Total </small>
+            <small class="text-muted">Total en precio</small>
+            <span class="text-muted" id="precioTotal" >$</span>
           </div>
-          <span class="text-muted">$0</span>
+          <span class="text-muted" id="productosTotal">#</span>
         </li>
         
       </ul>
@@ -83,11 +84,34 @@
             </div>
           </div>
         </div>
-        <button class="btn btn-primary btn-lg btn-block" type="button">Agregar</button>
+        <button class="btn btn-primary btn-lg btn-block" type="button" id="btnAgregar">Agregar</button>
+        <button class="btn btn-secondary btn-lg btn-block" type="button" id="btnVer">Ver</button>
+        <button class="btn btn-dark btn-lg btn-block" type="button" id="btnBorrar">Borrar</button>
         <hr class="mb-4">
         
         <!-- Insertar tabla aquí -->
-
+      <!--Tabla usada de referencia para PANTALLA, indice 0.-->
+        <div class="col-12">
+          <table class="table" style="background-color: rgb(196, 201, 202);"> <!--Aquí no se agrega display none, porque nos interesa que se miré el titulo.-->
+            <tr class = "alert">
+                <td>#</td>
+                <td>Nombre</td>
+                <td>Cantidad</td>
+                <td>Precio</td>
+            </tr>
+          </table>
+      </div>
+      <!--Tabla usada de referencia para agregar los productos, indice 1.-->
+        <div class="col-12" id="productos">
+            <table class="table table-striped" style="display: none" id="lista"> <!--El display hace que se vea hasta que presionemos el votón VER. Aunque internamente se registre en la pantalla.-->
+              <tr>
+                  <td>#</td>
+                  <td>Nombre</td>
+                  <td>Cantidad</td>
+                  <td>Precio</td>
+              </tr>
+            </table>
+        </div>
       </form>
     </div>
   </div>
